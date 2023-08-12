@@ -2,4 +2,4 @@
 import nameRequest from '../src/cli.js'
 
 console.log(`Welcome to the Brain Games!`);
-nameRequest();
+nameRequest();  
