@@ -4,7 +4,7 @@ import {getRandomInt, gameIntro, question, answerCheck} from '../src/index.js';
 const arrayGenerator = (startNum, numOfNums, step) => {
     let result = []
     let num = startNum
-    for (let i = 1; i <= 10; i += 1) {
+    for (let i = 1; i <= numOfNums; i += 1) {
         num += step
         result.push(num);
     }
