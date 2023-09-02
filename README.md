@@ -4,5 +4,6 @@
 
 Запишите аскинему с примером установки пакета, запуска игры, победой и поражением игрока. Опубликуйте её в сервисе и добавьте ссылку в README.md.
 
-brain-even: https://asciinema.org/a/irjbvO6oxk5Mcn3HTsi9HaP8c
-brainc-calc: https://asciinema.org/a/QqZKOxA1lF9u3v0ifx6aRylUr
+brain-even: https://asciinema.org/a/irjbvO6oxk5Mcn3HTsi9HaP8c <br>
+brainc-calc: https://asciinema.org/a/QqZKOxA1lF9u3v0ifx6aRylUr <br>
+brain-gcd: https://asciinema.org/a/B9HOJdsDhjJRs9H7PeY6zrzxI <br>
