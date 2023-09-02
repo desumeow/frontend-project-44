@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import nameRequest from '../src/cli.js';
 
-const getRandomInt = (maxNum) => {
-    return Math.floor(Math.random() * maxNum);
+const getRandomInt = (max, min = 1) => {
+    return Math.floor(Math.random() * (max - min) + min);
 };
 
 
