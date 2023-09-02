@@ -21,6 +21,8 @@ const progressionGame = () => {
     const name = gameIntro()
     let failCheck = true
 
+    console.log('What number is missing in the progression?')
+
     for (let score = 0; score < 3 && failCheck === true; score += 1) {
         const startNum = getRandomInt(100)
         const numOfNums = getRandomInt(10, 5)
@@ -43,6 +45,6 @@ const progressionGame = () => {
     } else return false
 }
 
-progressionGame()
+progressionGame()  
 
 export default progressionGame

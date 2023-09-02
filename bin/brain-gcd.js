@@ -14,6 +14,8 @@ const gcdGame = () => {
     const name = gameIntro()
     let failCheck = true
 
+    console.log('Find the greatest common divisor of given numbers.')
+
     for (let score = 0; score < 3 && failCheck === true; score += 1) {
         const questNum1 = getRandomInt(100)
         const questNum2 = getRandomInt(100)

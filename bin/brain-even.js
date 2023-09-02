@@ -10,10 +10,10 @@ const evenCheckGame = () => {
     console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
     
     for (let score = 0; score < 3 && failCheck === true; score += 1) {
-        const questionNum = getRandomInt(100);
-        const correctAnswer = isEven(questionNum) ? 'yes' : 'no';
+        const questNum = getRandomInt(100);
+        const correctAnswer = isEven(questNum) ? 'yes' : 'no';
 
-        const userAnswer = question(questionNum).toLocaleLowerCase().trim()
+        const userAnswer = question(questNum).toLowerCase().trim()
 
         failCheck = answerCheck(userAnswer, correctAnswer, name)
     }
