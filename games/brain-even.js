@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import {getRandomInt, gameIntro, question, answerCheck, gameOutro} from '../src/index.js';
 
 const isEven = (num) => (num % 2 === 0)
