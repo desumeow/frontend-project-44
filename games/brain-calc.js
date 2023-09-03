@@ -11,7 +11,7 @@ const calcGame = () => {
   console.log('What is the result of the expression?');
 
   for (let score = 0; score < 3 && failCheck === true; score += 1) {
-    const gameChoiceNum = getRandomInt(3);
+    const gameChoiceNum = getRandomInt(3, 0);
     const questNum1 = getRandomInt(100);
     const questNum2 = getRandomInt(100);
 
