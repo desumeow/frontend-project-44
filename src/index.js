@@ -26,6 +26,7 @@ const answerCheck = (userAnswer, correctAnswer, name) => {
     console.log(`Let's try again, ${name}!`);
     return false;
   }
+  return false;
 };
 
 const gameOutro = (failCheck, name) => {
@@ -37,5 +38,5 @@ const gameOutro = (failCheck, name) => {
 };
 
 export {
-    getRandomInt, gameIntro, question, answerCheck, gameOutro
+  getRandomInt, gameIntro, question, answerCheck, gameOutro,
 };

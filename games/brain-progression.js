@@ -13,7 +13,7 @@ const arrayGenerator = (startNum, numOfNums, step) => {
 };
 
 const hideNumInArray = (arr, numToHide) => {
-  const resultArr = arr
+  const resultArr = arr;
   const hidedNum = arr[numToHide - 1];
   resultArr[numToHide - 1] = '..';
   return [hidedNum, resultArr.join(' ')];
