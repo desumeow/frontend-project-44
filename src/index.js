@@ -31,4 +31,11 @@ const answerCheck = (userAnswer, correctAnswer, name) => {
     }
 }
 
-export {getRandomInt, gameIntro, question, answerCheck}
+const gameOutro = (failCheck, name) => {
+    if (failCheck === true) {
+        console.log(`Congratulations, ${name}!`)
+        return true;
+    } else return false
+}
+
+export {getRandomInt, gameIntro, question, answerCheck, gameOutro}
