@@ -13,9 +13,10 @@ const arrayGenerator = (startNum, numOfNums, step) => {
 };
 
 const hideNumInArray = (arr, numToHide) => {
+  const resultArr = arr
   const hidedNum = arr[numToHide - 1];
-  arr[numToHide - 1] = '..';
-  return [hidedNum, arr.join(' ')];
+  resultArr[numToHide - 1] = '..';
+  return [hidedNum, resultArr.join(' ')];
 };
 
 const progressionGame = () => {
@@ -32,7 +33,7 @@ const progressionGame = () => {
     const numSeries = arrayGenerator(startNum, numOfNums, step);
     const numToHide = getRandomInt(numSeries.length);
     const [correctAnswer, quest] = hideNumInArray(numSeries, numToHide);
-    const userAnswer = question(`${quest}`);
+    const userAnswer = Number(question(`${quest}`));
 
     failCheck = answerCheck(userAnswer, correctAnswer, name);
   }

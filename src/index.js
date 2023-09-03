@@ -17,11 +17,11 @@ const question = (quest) => {
 };
 
 const answerCheck = (userAnswer, correctAnswer, name) => {
-  if (userAnswer == correctAnswer) {
+  if (userAnswer === correctAnswer) {
     console.log('Correct!');
     return true;
   }
-  if (userAnswer != correctAnswer) {
+  if (userAnswer !== correctAnswer) {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
     console.log(`Let's try again, ${name}!`);
     return false;
@@ -36,4 +36,6 @@ const gameOutro = (failCheck, name) => {
   return false;
 };
 
-export { getRandomInt, gameIntro, question, answerCheck, gameOutro };
+export {
+    getRandomInt, gameIntro, question, answerCheck, gameOutro
+};

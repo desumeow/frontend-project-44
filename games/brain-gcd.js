@@ -22,7 +22,7 @@ const gcdGame = () => {
     const questNum2 = getRandomInt(100);
     const correctAnswer = findGCD(questNum1, questNum2);
 
-    const userAnswer = question(`${questNum1} ${questNum2}`);
+    const userAnswer = Number(question(`${questNum1} ${questNum2}`));
 
     failCheck = answerCheck(userAnswer, correctAnswer, name);
   }

@@ -16,13 +16,13 @@ const calcGame = () => {
     const questNum2 = getRandomInt(100);
 
     if (gameChoiceNum < 1) {
-      userAnswer = question(`${questNum1} + ${questNum2}`);
+      userAnswer = Number(question(`${questNum1} + ${questNum2}`));
       correctAnswer = questNum1 + questNum2;
     } else if (gameChoiceNum < 2) {
-      userAnswer = question(`${questNum1} - ${questNum2}`);
+      userAnswer = Number(question(`${questNum1} - ${questNum2}`));
       correctAnswer = questNum1 - questNum2;
     } else {
-      userAnswer = question(`${questNum1} * ${questNum2}`);
+      userAnswer = Number(question(`${questNum1} * ${questNum2}`));
       correctAnswer = questNum1 * questNum2;
     }
 
