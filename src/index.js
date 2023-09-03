@@ -7,35 +7,35 @@ const getRandomInt = (max, min = 1) => {
 
 
 const gameIntro = () => {
-    console.log('Welcome to the Brain Games!')
-    const name = nameRequest()
+    console.log('Welcome to the Brain Games!');
+    const name = nameRequest();
 
-    return name
+    return name;
 };
 
 const question = (quest) => {
-    console.log(`Question: ${quest}`)
+    console.log(`Question: ${quest}`);
 
     return readlineSync.question(`Your answer: `);
-}
+};
 
 const answerCheck = (userAnswer, correctAnswer, name) => {
     if (userAnswer == correctAnswer) {
-        console.log(`Correct!`)
-        return true
-    } 
+        console.log(`Correct!`);
+        return true;
+    }
     if (userAnswer != correctAnswer) {
         console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
         console.log(`Let's try again, ${name}!`);
         return false;
     }
-}
+};
 
 const gameOutro = (failCheck, name) => {
     if (failCheck === true) {
-        console.log(`Congratulations, ${name}!`)
+        console.log(`Congratulations, ${name}!`);
         return true;
-    } else return false
-}
+    } else return false;
+};
 
-export {getRandomInt, gameIntro, question, answerCheck, gameOutro}
+export { getRandomInt, gameIntro, question, answerCheck, gameOutro };
