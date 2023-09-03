@@ -1,5 +1,5 @@
 import {
-    getRandomInt, gameIntro, question, answerCheck, gameOutro
+  getRandomInt, gameIntro, question, answerCheck, gameOutro,
 } from '../src/index.js';
 
 const findGCD = (X, Y) => {
@@ -26,7 +26,7 @@ const gcdGame = () => {
 
     failCheck = answerCheck(userAnswer, correctAnswer, name);
   }
-    
+
   return gameOutro(failCheck, name);
 };
 

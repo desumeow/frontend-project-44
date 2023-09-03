@@ -1,5 +1,5 @@
 import {
-    getRandomInt, gameIntro, question, answerCheck, gameOutro
+  getRandomInt, gameIntro, question, answerCheck, gameOutro,
 } from '../src/index.js';
 
 const arrayGenerator = (startNum, numOfNums, step) => {

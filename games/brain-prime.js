@@ -1,5 +1,5 @@
 import {
-  getRandomInt, gameIntro, question, answerCheck, gameOutro
+  getRandomInt, gameIntro, question, answerCheck, gameOutro,
 } from '../src/index.js';
 
 const isPrime = (num) => {
@@ -10,10 +10,10 @@ const isPrime = (num) => {
   if (num < 9) return true;
   if (num % 3 === 0) return false;
 
-  for (let i = 5; i < limit; i += 6){
+  for (let i = 5; i < limit; i += 6) {
     if (num % i === 0) return false;
     if (num % (i + 2) === 0) return false;
-    }
+  }
 
   return true;
 };
@@ -35,6 +35,6 @@ const primeGame = () => {
   }
 
   return gameOutro(failCheck, name);
-}
+};
 
 export default primeGame;
