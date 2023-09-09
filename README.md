@@ -1,5 +1,6 @@
 <b>Description:</b><br>
 “Brain Games” is a set of five console games built on the principle of popular mobile applications for brain training. Each game asks questions that must be answered correctly. After three correct answers, the game is considered completed. Wrong answers end the game and prompt you to play it again.<br> 
+
 <b>Games:</b>
 
     * Calculator. Arithmetic expressions to be evaluated.
