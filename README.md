@@ -3,11 +3,11 @@
 
 <b>Games:</b>
 
-    * Calculator. Arithmetic expressions to be evaluated.
-    * Progression. Finding missing numbers in a sequence of numbers.
-    * Definition of an even number.
-    * Determination of the greatest common divisor.
-    * Definition of a prime number.
+* Calculator. Arithmetic expressions to be evaluated.
+* Progression. Finding missing numbers in a sequence of numbers.
+* Definition of an even number.
+* Determination of the greatest common divisor.
+* Definition of a prime number.
 
 <b>Requirements:</b>
  * node.js v12.22.9
