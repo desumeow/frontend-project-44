@@ -1,6 +1,7 @@
 import {
-  getRandomInt, gameIntro, question, answerCheck, gameOutro,
-} from '../src/index.js';
+  gameIntro, question, answerCheck,
+} from '../index.js';
+import { getRandomInt } from '../utils.js';
 
 const findGCD = (X, Y) => {
   for (let i = Math.min(X, Y); i > 1; i -= 1) {
@@ -12,10 +13,8 @@ const findGCD = (X, Y) => {
 };
 
 const gcdGame = () => {
-  const name = gameIntro();
+  const name = gameIntro('Find the greatest common divisor of given numbers.');
   let failCheck = true;
-
-  console.log('Find the greatest common divisor of given numbers.');
 
   for (let score = 0; score < 3 && failCheck === true; score += 1) {
     const questNum1 = getRandomInt(100);
@@ -24,10 +23,8 @@ const gcdGame = () => {
 
     const userAnswer = Number(question(`${questNum1} ${questNum2}`));
 
-    failCheck = answerCheck(userAnswer, correctAnswer, name);
+    failCheck = answerCheck(userAnswer, correctAnswer, name, score);
   }
-
-  return gameOutro(failCheck, name);
 };
 
 export default gcdGame;

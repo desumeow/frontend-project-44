@@ -1,6 +1,7 @@
 import {
-  getRandomInt, gameIntro, question, answerCheck, gameOutro,
-} from '../src/index.js';
+  gameIntro, question, answerCheck,
+} from '../index.js';
+import { getRandomInt } from '../utils.js';
 
 const arrayGenerator = (startNum, numOfNums, step) => {
   const result = [];
@@ -20,10 +21,8 @@ const hideNumInArray = (arr, numToHide) => {
 };
 
 const progressionGame = () => {
-  const name = gameIntro();
+  const name = gameIntro('What number is missing in the progression?');
   let failCheck = true;
-
-  console.log('What number is missing in the progression?');
 
   for (let score = 0; score < 3 && failCheck === true; score += 1) {
     const startNum = getRandomInt(100);
@@ -35,10 +34,8 @@ const progressionGame = () => {
     const [correctAnswer, quest] = hideNumInArray(numSeries, numToHide);
     const userAnswer = Number(question(`${quest}`));
 
-    failCheck = answerCheck(userAnswer, correctAnswer, name);
+    failCheck = answerCheck(userAnswer, correctAnswer, name, score);
   }
-
-  return gameOutro(failCheck, name);
 };
 
 export default progressionGame;

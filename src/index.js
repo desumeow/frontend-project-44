@@ -1,11 +1,12 @@
-import readlineSync from 'readline-sync';
-import nameRequest from './cli.js';
+import { inputRequest, getRandomInt } from './utils.js';
 
-const getRandomInt = (max, min = 1) => Math.floor(Math.random() * (max - min) + min);
-
-const gameIntro = () => {
+const gameIntro = (questDescription) => {
   console.log('Welcome to the Brain Games!');
-  const name = nameRequest();
+
+  const name = inputRequest('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+
+  console.log(questDescription);
 
   return name;
 };
@@ -13,12 +14,16 @@ const gameIntro = () => {
 const question = (quest) => {
   console.log(`Question: ${quest}`);
 
-  return readlineSync.question('Your answer: ');
+  return inputRequest('Your answer: ');
 };
 
-const answerCheck = (userAnswer, correctAnswer, name) => {
+const answerCheck = (userAnswer, correctAnswer, name, score) => {
   if (userAnswer === correctAnswer) {
     console.log('Correct!');
+    if (score === 2) {
+      console.log(`Congratulations, ${name}!`);
+      return true;
+    }
     return true;
   }
   if (userAnswer !== correctAnswer) {
@@ -29,14 +34,6 @@ const answerCheck = (userAnswer, correctAnswer, name) => {
   return false;
 };
 
-const gameOutro = (failCheck, name) => {
-  if (failCheck === true) {
-    console.log(`Congratulations, ${name}!`);
-    return true;
-  }
-  return false;
-};
-
 export {
-  getRandomInt, gameIntro, question, answerCheck, gameOutro,
+  getRandomInt, gameIntro, question, answerCheck,
 };

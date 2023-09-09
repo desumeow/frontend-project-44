@@ -1,14 +1,13 @@
 import {
-  getRandomInt, gameIntro, question, answerCheck, gameOutro,
-} from '../src/index.js';
+  gameIntro, question, answerCheck,
+} from '../index.js';
+import { getRandomInt } from '../utils.js';
 
 const calcGame = () => {
-  const name = gameIntro();
+  const name = gameIntro('What is the result of the expression?');
   let failCheck = true;
   let userAnswer = 0;
   let correctAnswer = 0;
-
-  console.log('What is the result of the expression?');
 
   for (let score = 0; score < 3 && failCheck === true; score += 1) {
     const gameChoiceNum = getRandomInt(3, 0);
@@ -26,9 +25,8 @@ const calcGame = () => {
       correctAnswer = questNum1 * questNum2;
     }
 
-    failCheck = answerCheck(userAnswer, correctAnswer, name);
+    failCheck = answerCheck(userAnswer, correctAnswer, name, score);
   }
-  return gameOutro(failCheck, name);
 };
 
 export default calcGame;
