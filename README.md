@@ -13,11 +13,14 @@
  * node.js v12.22.9
 
 <b>Game demo:</b><br>
-* brain-even:<br> <a href="https://asciinema.org/a/irjbvO6oxk5Mcn3HTsi9HaP8c"><img alt="asciicast" src="https://asciinema.org/a/irjbvO6oxk5Mcn3HTsi9HaP8c.svg" style="width: 700px;"></a> <br>
-* brainc-calc:<br> <a href="https://asciinema.org/a/QqZKOxA1lF9u3v0ifx6aRylUr"><img alt="asciicast" src="https://asciinema.org/a/QqZKOxA1lF9u3v0ifx6aRylUr.svg" style="width: 700px;"></a> <br>
-* brain-gcd:<br> <a href="https://asciinema.org/a/B9HOJdsDhjJRs9H7PeY6zrzxI"><img alt="asciicast" src="https://asciinema.org/a/B9HOJdsDhjJRs9H7PeY6zrzxI.svg" style="width: 700px;"></a> <br>
-* brain-progression:<br> <a href="https://asciinema.org/a/hmmWnuHwcLkQneUpLCyjNJOqJ"><img alt="asciicast" src="https://asciinema.org/a/hmmWnuHwcLkQneUpLCyjNJOqJ.svg" style="width: 700px;"></a> <br>
-* brain-prime: <br> <a href="https://asciinema.org/a/aKJE5ycCxc3DPuDNXRuvtbBYe"><img alt="asciicast" src="https://asciinema.org/a/aKJE5ycCxc3DPuDNXRuvtbBYe.svg" style="width: 700px;"></a>
+* brain-even:<br> <a href="https://asciinema.org/a/h7Iy46bZ0AvxzK5Gb9hebAYuA" target="_blank"><img src="https://asciinema.org/a/h7Iy46bZ0AvxzK5Gb9hebAYuA.svg" /></a> <br>
+* brainc-calc:<br> <a href="https://asciinema.org/a/tC0dkZ9wDNbWc0XAuA38UcABr" target="_blank"><img src="https://asciinema.org/a/tC0dkZ9wDNbWc0XAuA38UcABr.svg" /></a> <br>
+* brain-gcd:<br> <a href="https://asciinema.org/a/ONiXXhlsimmvpCcqIZekX8EQr" target="_blank"><img src="https://asciinema.org/a/ONiXXhlsimmvpCcqIZekX8EQr.svg" /></a> <br>
+* brain-progression:<br> <a href="https://asciinema.org/a/ju3VgpkwCbk9YoBNcgyvUGdmx" target="_blank"><img src="https://asciinema.org/a/ju3VgpkwCbk9YoBNcgyvUGdmx.svg" /></a> <br>
+* brain-prime: <br> <a href="https://asciinema.org/a/3D9lAGwCPdOOYPFJSX7r8lmCD" target="_blank"><img src="https://asciinema.org/a/3D9lAGwCPdOOYPFJSX7r8lmCD.svg" /></a>
+
+<b>Installation asciinema:</b><br>
+<a href="https://asciinema.org/a/Pf6yukBWZn0Xgl1CnyVUkDIVH" target="_blank"><img src="https://asciinema.org/a/Pf6yukBWZn0Xgl1CnyVUkDIVH.svg" /></a>
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/desumeow/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/desumeow/frontend-project-44/actions)
