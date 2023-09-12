@@ -32,16 +32,24 @@ For installation:
 1. clone a repository locally
 2. In the console, run the command: <br>
 
-* make install
+```
+make install
+```
 
 Next, to start, type the name of the desired game. <br>
 List of commands to start the game: <br>
 
-* brain-even <br>
-* brain-calc <br>
-* brain-gcd <br>
-* brain-progression <br>
-* brain-prime 
+```
+brain-even
+
+brain-calc
+
+brain-gcd
+
+brain-progression
+
+brain-prime 
+```
 
 <b>Installation asciinema:</b><br>
 <a href="https://asciinema.org/a/Pf6yukBWZn0Xgl1CnyVUkDIVH" target="_blank"><img src="https://asciinema.org/a/Pf6yukBWZn0Xgl1CnyVUkDIVH.svg" /></a>
