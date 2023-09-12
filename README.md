@@ -16,9 +16,11 @@
 * Definition of a prime number.
 
 <b>Requirements:</b>
- * node.js v12.22.9
+
+* node.js v12.22.9
 
 <b>Game demo:</b><br>
+
 * brain-even:<br> <a href="https://asciinema.org/a/h7Iy46bZ0AvxzK5Gb9hebAYuA" target="_blank"><img src="https://asciinema.org/a/h7Iy46bZ0AvxzK5Gb9hebAYuA.svg" /></a> <br>
 * brainc-calc:<br> <a href="https://asciinema.org/a/tC0dkZ9wDNbWc0XAuA38UcABr" target="_blank"><img src="https://asciinema.org/a/tC0dkZ9wDNbWc0XAuA38UcABr.svg" /></a> <br>
 * brain-gcd:<br> <a href="https://asciinema.org/a/ONiXXhlsimmvpCcqIZekX8EQr" target="_blank"><img src="https://asciinema.org/a/ONiXXhlsimmvpCcqIZekX8EQr.svg" /></a> <br>
@@ -29,15 +31,16 @@
 For installation:
 1. clone a repository locally
 2. In the console, run the command: <br>
-    make install <br>
+
+* make install <br>
 Next, to start, type the name of the desired game. <br>
 List of commands to start the game: <br>
 
-      brain-even <br>
-      brain-calc <br>
-      brain-gcd <br>
-      brain-progression <br>
-      brain-prime 
+* brain-even <br>
+* brain-calc <br>
+* brain-gcd <br>
+* brain-progression <br>
+* brain-prime 
 
 <b>Installation asciinema:</b><br>
 <a href="https://asciinema.org/a/Pf6yukBWZn0Xgl1CnyVUkDIVH" target="_blank"><img src="https://asciinema.org/a/Pf6yukBWZn0Xgl1CnyVUkDIVH.svg" /></a>
