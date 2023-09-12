@@ -10,7 +10,7 @@ const gameEngine = (task, gameDataGen) => {
   console.log(`Hello, ${name}!`);
   console.log(task);
 
-  for (let score = 0; score < numberOfRounds; score += 1) {
+  for (let score = 1; score <= numberOfRounds; score += 1) {
     const gameData = gameDataGen();
     console.log(`Question: ${gameData.quest}`);
     let userAnswer = inputRequest('Your answer: ');
