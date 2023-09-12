@@ -7,8 +7,7 @@ const inputRequest = (inputDescription) => readlineSync.question(inputDescriptio
 const gameEngine = (task, gameDataGen) => {
   console.log('Welcome to the Brain Games!');
   const name = inputRequest('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log(task);
+  console.log(`Hello, ${name}! \n${task}`);
 
   for (let score = 1; score <= numberOfRounds; score += 1) {
     const gameData = gameDataGen();
@@ -25,8 +24,7 @@ const gameEngine = (task, gameDataGen) => {
         console.log(`Congratulations, ${name}!`);
       }
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameData.correct}'.`);
-      console.log(`Let's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameData.correct}'. \nLet's try again, ${name}!`);
       break;
     }
   }

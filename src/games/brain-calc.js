@@ -2,21 +2,19 @@ import getRandomInt from '../utils.js';
 
 const rules = 'What is the result of the expression?';
 
-const calculator = (operatorSelector, questNumX, questNumY) => {
-  let quest;
+const calculator = (operatorSelector, x, y) => {
+  const operator = ['+', '-', '*'];
+  const quest = `${x} ${operator[operatorSelector]} ${y}`;
   let correctAnswer;
-  if (operatorSelector < 1) {
-    quest = `${questNumX} + ${questNumY}`;
-    correctAnswer = questNumX + questNumY;
-    return [quest, correctAnswer];
+  if (operator[operatorSelector] === '+') {
+    correctAnswer = x + y;
   }
-  if (operatorSelector < 2) {
-    quest = `${questNumX} - ${questNumY}`;
-    correctAnswer = questNumX - questNumY;
-    return [quest, correctAnswer];
+  if (operator[operatorSelector] === '-') {
+    correctAnswer = x - y;
   }
-  quest = `${questNumX} * ${questNumY}`;
-  correctAnswer = questNumX * questNumY;
+  if (operator[operatorSelector] === '*') {
+    correctAnswer = x * y;
+  }
   return [quest, correctAnswer];
 };
 
