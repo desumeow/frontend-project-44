@@ -41,13 +41,17 @@ List of commands to start the game: <br>
 
 ```
 brain-even
-
+```
+```
 brain-calc
-
+```
+```
 brain-gcd
-
+```
+```
 brain-progression
-
+```
+```
 brain-prime 
 ```
 
