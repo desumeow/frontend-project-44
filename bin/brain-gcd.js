@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import gcdGame from '../src/games/brain-gcd.js';
+import { rules, gcdDataGen} from '../src/games/brain-gcd.js';
+import gameEngine from '../src/index.js';
 
-gcdGame();
+gameEngine(rules, gcdDataGen);

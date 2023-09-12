@@ -1,39 +1,35 @@
-import { inputRequest, getRandomInt } from './utils.js';
+import readlineSync from 'readline-sync';
 
-const gameIntro = (questDescription) => {
+const numberOfRounds = 3;
+
+const inputRequest = (inputDescription) => readlineSync.question(inputDescription);
+
+const gameEngine = (task, gameDataGen) => {
   console.log('Welcome to the Brain Games!');
-
   const name = inputRequest('May I have your name? ');
   console.log(`Hello, ${name}!`);
+  console.log(task);
 
-  console.log(questDescription);
+  for (let score = 0; score < numberOfRounds; score += 1) {
+    const gameData = gameDataGen();
+    console.log(`Question: ${gameData.quest}`);
+    let userAnswer = inputRequest('Your answer: ');
 
-  return name;
-};
+    if (Number.isNaN(Number(userAnswer))) {
+      userAnswer = userAnswer.toLowerCase().trim();
+    } else userAnswer = Number(userAnswer);
 
-const question = (quest) => {
-  console.log(`Question: ${quest}`);
-
-  return inputRequest('Your answer: ');
-};
-
-const answerCheck = (userAnswer, correctAnswer, name, score) => {
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    if (score === 2) {
-      console.log(`Congratulations, ${name}!`);
-      return true;
+    if (userAnswer === gameData.correct) {
+      console.log('Correct!');
+      if (score === 3) {
+        console.log(`Congratulations, ${name}!`);
+      }
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameData.correct}'.`);
+      console.log(`Let's try again, ${name}!`);
+      break;
     }
-    return true;
   }
-  if (userAnswer !== correctAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    console.log(`Let's try again, ${name}!`);
-    return false;
-  }
-  return false;
 };
 
-export {
-  getRandomInt, gameIntro, question, answerCheck,
-};
+export default gameEngine;

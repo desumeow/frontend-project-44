@@ -1,32 +1,36 @@
-import {
-  gameIntro, question, answerCheck,
-} from '../index.js';
-import { getRandomInt } from '../utils.js';
+import getRandomInt from '../utils.js';
 
-const calcGame = () => {
-  const name = gameIntro('What is the result of the expression?');
-  let failCheck = true;
-  let userAnswer = 0;
-  let correctAnswer = 0;
+const rules = 'What is the result of the expression?';
 
-  for (let score = 0; score < 3 && failCheck === true; score += 1) {
-    const gameChoiceNum = getRandomInt(3, 0);
-    const questNum1 = getRandomInt(100);
-    const questNum2 = getRandomInt(100);
-
-    if (gameChoiceNum < 1) {
-      userAnswer = Number(question(`${questNum1} + ${questNum2}`));
-      correctAnswer = questNum1 + questNum2;
-    } else if (gameChoiceNum < 2) {
-      userAnswer = Number(question(`${questNum1} - ${questNum2}`));
-      correctAnswer = questNum1 - questNum2;
-    } else {
-      userAnswer = Number(question(`${questNum1} * ${questNum2}`));
-      correctAnswer = questNum1 * questNum2;
-    }
-
-    failCheck = answerCheck(userAnswer, correctAnswer, name, score);
+const calculator = (operatorSelector, questNumX, questNumY) => {
+  let quest;
+  let correctAnswer;
+  if (operatorSelector < 1) {
+    quest = `${questNumX} + ${questNumY}`;
+    correctAnswer = questNumX + questNumY;
+    return [quest, correctAnswer];
   }
+  if (operatorSelector < 2) {
+    quest = `${questNumX} - ${questNumY}`;
+    correctAnswer = questNumX - questNumY;
+    return [quest, correctAnswer];
+  }
+  quest = `${questNumX} * ${questNumY}`;
+  correctAnswer = questNumX * questNumY;
+  return [quest, correctAnswer];
 };
 
-export default calcGame;
+const calcDataGen = () => {
+  const gameChoiceNum = getRandomInt(3, 0);
+  const questNumX = getRandomInt(100);
+  const questNumY = getRandomInt(100);
+
+  const gameData = {};
+  const [quest, correctAnswer] = calculator(gameChoiceNum, questNumX, questNumY);
+  gameData.quest = quest;
+  gameData.correct = correctAnswer;
+
+  return gameData;
+};
+
+export { rules, calcDataGen };

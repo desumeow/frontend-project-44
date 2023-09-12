@@ -1,30 +1,30 @@
-import {
-  gameIntro, question, answerCheck,
-} from '../index.js';
-import { getRandomInt } from '../utils.js';
+import getRandomInt from '../utils.js';
+
+const rules = 'Find the greatest common divisor of given numbers.';
 
 const findGCD = (X, Y) => {
-  for (let i = Math.min(X, Y); i > 1; i -= 1) {
-    if (X % i === 0 && Y % i === 0) {
-      return i;
+  let a = X;
+  let b = Y;
+
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
     }
   }
-  return 1;
+  return a + b;
 };
 
-const gcdGame = () => {
-  const name = gameIntro('Find the greatest common divisor of given numbers.');
-  let failCheck = true;
+const gcdDataGen = () => {
+  const questNum1 = getRandomInt(100);
+  const questNum2 = getRandomInt(100);
 
-  for (let score = 0; score < 3 && failCheck === true; score += 1) {
-    const questNum1 = getRandomInt(100);
-    const questNum2 = getRandomInt(100);
-    const correctAnswer = findGCD(questNum1, questNum2);
+  const gameData = {};
+  gameData.quest = `${questNum1} ${questNum2}`;
+  gameData.correct = findGCD(questNum1, questNum2);
 
-    const userAnswer = Number(question(`${questNum1} ${questNum2}`));
-
-    failCheck = answerCheck(userAnswer, correctAnswer, name, score);
-  }
+  return gameData;
 };
 
-export default gcdGame;
+export { rules, gcdDataGen };
