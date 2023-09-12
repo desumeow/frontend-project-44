@@ -32,7 +32,8 @@ For installation:
 1. clone a repository locally
 2. In the console, run the command: <br>
 
-* make install <br>
+* make install
+
 Next, to start, type the name of the desired game. <br>
 List of commands to start the game: <br>
 
