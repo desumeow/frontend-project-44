@@ -27,9 +27,10 @@ const calcDataGen = () => {
   const questNumY = getRandomInt(100);
   const operator = ['+', '-', '*'];
 
-  const gameData = {};
-  gameData.quest = `${questNumX} ${operator[operatorSelector]} ${questNumY}`;
-  gameData.correctAnswer = calculator(operator[operatorSelector], questNumX, questNumY);
+  const gameData = {
+    quest: `${questNumX} ${operator[operatorSelector]} ${questNumY}`,
+    correctAnswer: calculator(operator[operatorSelector], questNumX, questNumY),
+  };
 
   return gameData;
 };
