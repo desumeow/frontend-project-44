@@ -1,4 +1,5 @@
 import getRandomInt from '../utils.js';
+import gameEngine from '../index.js';
 
 const rules = 'What number is missing in the progression?';
 
@@ -19,11 +20,13 @@ const progressionDataGen = () => {
   const numToHide = getRandomInt(numSeries.length) - 1;
 
   const gameData = {};
-  gameData.correct = numSeries[numToHide];
+  gameData.correctAnswer = numSeries[numToHide];
   numSeries[numToHide] = '..';
   gameData.quest = numSeries.join(' ');
 
   return gameData;
 };
 
-export { rules, progressionDataGen };
+gameEngine(rules, progressionDataGen);
+
+export default progressionDataGen;

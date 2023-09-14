@@ -1,4 +1,5 @@
 import getRandomInt from '../utils.js';
+import gameEngine from '../index.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
@@ -22,9 +23,11 @@ const gcdDataGen = () => {
 
   const gameData = {};
   gameData.quest = `${questNum1} ${questNum2}`;
-  gameData.correct = findGCD(questNum1, questNum2);
+  gameData.correctAnswer = findGCD(questNum1, questNum2);
 
   return gameData;
 };
 
-export { rules, gcdDataGen };
+gameEngine(rules, gcdDataGen);
+
+export default gcdDataGen;

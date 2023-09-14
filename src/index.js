@@ -10,24 +10,20 @@ const gameEngine = (task, gameDataGen) => {
   console.log(`Hello, ${name}! \n${task}`);
 
   for (let score = 1; score <= numberOfRounds; score += 1) {
-    const gameData = gameDataGen();
-    console.log(`Question: ${gameData.quest}`);
+    const { quest, correctAnswer } = gameDataGen();
+    console.log(`Question: ${quest}`);
     let userAnswer = inputRequest('Your answer: ');
 
-    if (Number.isNaN(Number(userAnswer))) {
-      userAnswer = userAnswer.toLowerCase().trim();
-    } else userAnswer = Number(userAnswer);
+    userAnswer = userAnswer.toLowerCase().trim();
 
-    if (userAnswer === gameData.correct) {
+    if (userAnswer === correctAnswer.toString()) {
       console.log('Correct!');
-      if (score === 3) {
-        console.log(`Congratulations, ${name}!`);
-      }
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameData.correct}'. \nLet's try again, ${name}!`);
-      break;
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}!`);
+      return;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default gameEngine;

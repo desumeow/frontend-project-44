@@ -1,34 +1,39 @@
 import getRandomInt from '../utils.js';
+import gameEngine from '../index.js';
 
 const rules = 'What is the result of the expression?';
 
-const calculator = (operatorSelector, x, y) => {
-  const operator = ['+', '-', '*'];
-  const quest = `${x} ${operator[operatorSelector]} ${y}`;
+const calculator = (operator, x, y) => {
   let correctAnswer;
-  if (operator[operatorSelector] === '+') {
-    correctAnswer = x + y;
+  switch (operator) {
+    case '+':
+      correctAnswer = x + y;
+      break;
+    case '-':
+      correctAnswer = x - y;
+      break;
+    case '*':
+      correctAnswer = x * y;
+      break;
+    default:
+      correctAnswer = undefined;
   }
-  if (operator[operatorSelector] === '-') {
-    correctAnswer = x - y;
-  }
-  if (operator[operatorSelector] === '*') {
-    correctAnswer = x * y;
-  }
-  return [quest, correctAnswer];
+  return correctAnswer;
 };
 
 const calcDataGen = () => {
-  const gameChoiceNum = getRandomInt(3, 0);
+  const operatorSelector = getRandomInt(3, 0);
   const questNumX = getRandomInt(100);
   const questNumY = getRandomInt(100);
+  const operator = ['+', '-', '*'];
 
   const gameData = {};
-  const [quest, correctAnswer] = calculator(gameChoiceNum, questNumX, questNumY);
-  gameData.quest = quest;
-  gameData.correct = correctAnswer;
+  gameData.quest = `${questNumX} ${operator[operatorSelector]} ${questNumY}`;
+  gameData.correctAnswer = calculator(operator[operatorSelector], questNumX, questNumY);
 
   return gameData;
 };
 
-export { rules, calcDataGen };
+gameEngine(rules, calcDataGen);
+
+export default calcDataGen;
