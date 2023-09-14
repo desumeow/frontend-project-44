@@ -21,10 +21,9 @@ const gcdDataGen = () => {
   const questNum1 = getRandomInt(100);
   const questNum2 = getRandomInt(100);
 
-  const gameData = {
-    quest: `${questNum1} ${questNum2}`,
-    correctAnswer: findGCD(questNum1, questNum2),
-  };
+  const gameData = {};
+  gameData.quest = `${questNum1} ${questNum2}`;
+  gameData.correctAnswer = findGCD(questNum1, questNum2);
 
   return gameData;
 };

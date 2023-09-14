@@ -14,11 +14,9 @@ const isPrime = (num) => {
 };
 
 const primeDataGen = () => {
-  const questNum = getRandomInt(100);
-  const gameData = {
-    quest: questNum,
-    correctAnswer: isPrime(questNum) ? 'yes' : 'no',
-  };
+  const gameData = {};
+  gameData.quest = getRandomInt(100);
+  gameData.correctAnswer = isPrime(gameData.quest) ? 'yes' : 'no';
 
   return gameData;
 };
