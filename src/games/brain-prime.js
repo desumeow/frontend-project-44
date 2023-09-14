@@ -14,8 +14,7 @@ const isPrime = (num) => {
 };
 
 const primeDataGen = () => {
-  const gameData = {};
-  gameData.quest = getRandomInt(100);
+  const gameData = { quest: getRandomInt(100) };
   gameData.correctAnswer = isPrime(gameData.quest) ? 'yes' : 'no';
 
   return gameData;
