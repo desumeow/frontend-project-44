@@ -1,18 +1,17 @@
 import getRandomInt from '../utils.js';
-import gameEngine from '../index.js';
+import startGameEngine from '../index.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => (num % 2 === 0);
 
-const evenCheckDataGen = () => {
-  const gameData = {};
-  gameData.quest = getRandomInt(100);
-  gameData.correctAnswer = isEven(gameData.quest) ? 'yes' : 'no';
+const getRoundData = () => {
+  const question = getRandomInt(100);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
 
-  return gameData;
+  return { question, correctAnswer };
 };
 
-gameEngine(rules, evenCheckDataGen);
+startGameEngine(rules, getRoundData);
 
-export default evenCheckDataGen;
+export default getRoundData;

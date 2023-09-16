@@ -1,9 +1,9 @@
 import getRandomInt from '../utils.js';
-import gameEngine from '../index.js';
+import startGameEngine from '../index.js';
 
 const rules = 'What number is missing in the progression?';
 
-const arrayGenerator = (startNum, numOfNums, step) => {
+const generateArray = (startNum, numOfNums, step) => {
   const result = [];
   for (let i = 1; i <= numOfNums; i += 1) {
     result.push(startNum + i * step);
@@ -11,22 +11,21 @@ const arrayGenerator = (startNum, numOfNums, step) => {
   return result;
 };
 
-const progressionDataGen = () => {
+const getRoundData = () => {
   const startNum = getRandomInt(100);
   const numOfNums = getRandomInt(10, 5);
   const step = getRandomInt(6, 2);
 
-  const numSeries = arrayGenerator(startNum, numOfNums, step);
+  const numSeries = generateArray(startNum, numOfNums, step);
   const numToHide = getRandomInt(numSeries.length) - 1;
 
-  const gameData = {};
-  gameData.correctAnswer = numSeries[numToHide];
+  const correctAnswer = numSeries[numToHide];
   numSeries[numToHide] = '..';
-  gameData.quest = numSeries.join(' ');
+  const question = numSeries.join(' ');
 
-  return gameData;
+  return { question, correctAnswer };
 };
 
-gameEngine(rules, progressionDataGen);
+startGameEngine(rules, getRoundData);
 
-export default progressionDataGen;
+export default getRoundData;

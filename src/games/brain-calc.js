@@ -1,39 +1,33 @@
 import getRandomInt from '../utils.js';
-import gameEngine from '../index.js';
+import startGameEngine from '../index.js';
 
 const rules = 'What is the result of the expression?';
 
-const calculator = (operator, x, y) => {
-  let correctAnswer;
+const getCalculation = (operator, x, y) => {
   switch (operator) {
     case '+':
-      correctAnswer = x + y;
-      break;
+      return x + y;
     case '-':
-      correctAnswer = x - y;
-      break;
+      return x - y;
     case '*':
-      correctAnswer = x * y;
-      break;
+      return x * y;
     default:
-      correctAnswer = undefined;
+      throw new Error(`Unknown operator state: '${operator}'!`);
   }
-  return correctAnswer;
 };
 
-const calcDataGen = () => {
+const getRoundData = () => {
   const operatorSelector = getRandomInt(3, 0);
   const questNumX = getRandomInt(100);
   const questNumY = getRandomInt(100);
   const operator = ['+', '-', '*'];
 
-  const gameData = {};
-  gameData.quest = `${questNumX} ${operator[operatorSelector]} ${questNumY}`;
-  gameData.correctAnswer = calculator(operator[operatorSelector], questNumX, questNumY);
+  const question = `${questNumX} ${operator[operatorSelector]} ${questNumY}`;
+  const correctAnswer = getCalculation(operator[operatorSelector], questNumX, questNumY);
 
-  return gameData;
+  return { question, correctAnswer };
 };
 
-gameEngine(rules, calcDataGen);
+startGameEngine(rules, getRoundData);
 
-export default calcDataGen;
+export default getRoundData;

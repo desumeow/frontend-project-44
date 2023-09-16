@@ -1,11 +1,11 @@
 import getRandomInt from '../utils.js';
-import gameEngine from '../index.js';
+import startGameEngine from '../index.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
-const findGCD = (X, Y) => {
-  let a = X;
-  let b = Y;
+const getGCD = (x, y) => {
+  let a = x;
+  let b = y;
 
   while (a !== 0 && b !== 0) {
     if (a > b) {
@@ -17,17 +17,16 @@ const findGCD = (X, Y) => {
   return a + b;
 };
 
-const gcdDataGen = () => {
+const getRoundData = () => {
   const questNum1 = getRandomInt(100);
   const questNum2 = getRandomInt(100);
 
-  const gameData = {};
-  gameData.quest = `${questNum1} ${questNum2}`;
-  gameData.correctAnswer = findGCD(questNum1, questNum2);
+  const question = `${questNum1} ${questNum2}`;
+  const correctAnswer = getGCD(questNum1, questNum2);
 
-  return gameData;
+  return { question, correctAnswer };
 };
 
-gameEngine(rules, gcdDataGen);
+startGameEngine(rules, getRoundData);
 
-export default gcdDataGen;
+export default getRoundData;

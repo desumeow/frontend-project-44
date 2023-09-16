@@ -4,14 +4,14 @@ const numberOfRounds = 3;
 
 const inputRequest = (inputDescription) => readlineSync.question(inputDescription);
 
-const gameEngine = (task, gameDataGen) => {
+const startGameEngine = (task, gameDataGen) => {
   console.log('Welcome to the Brain Games!');
   const name = inputRequest('May I have your name? ');
   console.log(`Hello, ${name}! \n${task}`);
 
   for (let score = 1; score <= numberOfRounds; score += 1) {
-    const { quest, correctAnswer } = gameDataGen();
-    console.log(`Question: ${quest}`);
+    const { question, correctAnswer } = gameDataGen();
+    console.log(`Question: ${question}`);
     let userAnswer = inputRequest('Your answer: ');
 
     userAnswer = userAnswer.toLowerCase().trim();
@@ -26,4 +26,4 @@ const gameEngine = (task, gameDataGen) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default gameEngine;
+export default startGameEngine;
